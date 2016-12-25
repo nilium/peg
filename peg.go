@@ -186,7 +186,7 @@ type parseError struct {
 }
 
 func (e *parseError) Error() string {
-	tokens, error := []token32{e.max}, "\n"
+	tokens, error := []token32{e.max}, ""
 	positions, p := make([]int, 2 * len(tokens)), 0
 	for _, token := range tokens {
 		positions[p], p = int(token.begin), p + 1
